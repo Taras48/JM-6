@@ -5,10 +5,15 @@ import com.spring.model.User;
 import java.util.List;
 
 public interface UserDao {
-    public void addUser(User user);
-    public void updateUser(User user);
-    public void deletUser(Long id);
-    public User getUserById(Long id);
-    public User getUserByName(String name);
-    public List<User> getAllUsers();
+    void addUser(User user);
+
+    void updateUser(User user);
+
+    void deletUser(Long id);
+
+    User getUserById(Long id);
+
+    User getUserByName(String name);
+
+    List<User> getAllUsers();
 }

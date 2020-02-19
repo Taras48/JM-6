@@ -8,9 +8,7 @@
 <h1>All Users</h1>
 <p><a href="/admin/add">Add Users</a> |
     <a href="/admin/update">Update Users</a> |
-    <a href="/admin/delete">Delete Users</a> |
-    <a href="/helloUser">User psge</a> |
-    <a href="/logout">logout</a>
+    <a href="/admin/delete">Delete Users</a>
 </p>
 <c:if test="${list.size() > 0}">
     <table border="1px solid black">
@@ -19,7 +17,6 @@
             <td>Name</td>
             <td>Password</td>
             <td>Message</td>
-            <td>Role</td>
         </tr>
 
         <c:forEach var="user" items="${list}">
@@ -28,10 +25,6 @@
                 <td>${user.getName()}</td>
                 <td>${user.getPassword()}</td>
                 <td>${user.getMessage()}</td>
-                <td><c:forEach var="role" items="${user.getRoles()}">
-                    ${role.toString()}<br>
-                </c:forEach>
-                </td>
             </tr>
 
         </c:forEach>

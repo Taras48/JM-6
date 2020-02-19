@@ -14,17 +14,11 @@
 <h1>Add User</h1>
 <p><a href="/admin">All Users</a> |
     <a href="/admin/update">Update Users</a> |
-    <a href="/admin/delete">Delete Users</a> |
-    <a href="/helloUser">User psge</a> |
-    <a href="/logout">logout</a>
+    <a href="/admin/delete">Delete Users</a>
 </p>
 <form action="/admin/add" method="post">
     Name:<input type="text" name="name">
     Password:<input type="password" name="password">
-    Role:<select type="text" name="role">
-    <option value="user">User</option>
-    <option value="admin">Admin</option>
-</select>
     Message:<input type="text" name="message"><br/><br/>
     <button>Add user</button>
 </form>

@@ -14,9 +14,7 @@
 <h1>Delete User</h1>
 <p><a href="/admin">All Users</a> |
     <a href="/admin/update">Update Users</a> |
-    <a href="/admin/add">Add Users</a> |
-    <a href="/helloUser">User psge</a> |
-    <a href="/logout">logout</a>
+    <a href="/admin/add">Add Users</a>
 </p>
 <form action="/admin/delete" method="post">
     Id:<input type="number" name="id"><br/><br/>

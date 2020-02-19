@@ -15,36 +15,25 @@ import java.util.List;
 
 @Service
 @Transactional
-public class UserServiceImpl implements UserService, UserDetailsService {
+public class UserServiceImpl implements UserService {
 
 
     private UserDao userDao;
-    private PasswordEncoder passwordEncoder;
 
     @Autowired
-    public void setUserDao(UserDao userDao, PasswordEncoder passwordEncoder) {
+    public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
-        this.passwordEncoder = passwordEncoder;
-    }
 
-    @Override
-    public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
-        User user = userDao.getUserByName(name);
-        if (user == null){
-            throw new UsernameNotFoundException("User name Not Found");
-        }
-        return user;
     }
-
 
     public void addUser(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+
         userDao.addUser(user);
     }
 
 
     public void updateUser(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+
         userDao.updateUser(user);
     }
 
