@@ -29,7 +29,7 @@ public class UserController {
 
 
     @PostMapping(value = "/admin/add")
-    public ModelAndView addUserPost(User messageUser, String role) {
+    public ModelAndView addUserPost(User messageUser) {
         ModelAndView modelAndView = new ModelAndView();
         userService.addUser(messageUser);
         modelAndView.setViewName("redirect:/admin");
@@ -60,24 +60,27 @@ public class UserController {
     }
 
     @GetMapping(value = "/admin/add")
-    public ModelAndView addUser() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("admin/addUser");
-        return modelAndView;
+    public String addUser() {
+        return "admin/addUser";
+//        ModelAndView modelAndView = new ModelAndView();
+//        modelAndView.setViewName("admin/addUser");
+//        return modelAndView;
     }
 
     @GetMapping(value = "/admin/delete")
-    public ModelAndView deleteUsers() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("admin/deleteUser");
-        return modelAndView;
+    public String deleteUsers() {
+        return "admin/deleteUser";
+//        ModelAndView modelAndView = new ModelAndView();
+//        modelAndView.setViewName("admin/deleteUser");
+//        return modelAndView;
     }
 
     @GetMapping(value = "/admin/update")
-    public ModelAndView updateUsers() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("admin/updateUser");
-        return modelAndView;
+    public String updateUsers() {
+        return "admin/updateUser";
+//        ModelAndView modelAndView = new ModelAndView();
+//        modelAndView.setViewName("admin/updateUser");
+//        return modelAndView;
     }
 
 }
