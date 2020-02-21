@@ -19,11 +19,8 @@
 <form action="/admin/add" method="post">
     Name:<input type="text" name="name">
     Password:<input type="password" name="password">
-    Message:<input type="text" name="message"><br/>
-    Role:<select type="text" name="role">
-    <option value="user">User</option>
-    <option value="admin">Admin</option>
-    </select><br/>
+    Message:<input type="text" name="message"><br/><br/>
+
     <button>Add user</button>
 </form>
 

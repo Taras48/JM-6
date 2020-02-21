@@ -29,27 +29,23 @@ public class UserController {
 
 
     @PostMapping(value = "/admin/add")
-    public ModelAndView addUserPost(User messageUser) {
-        ModelAndView modelAndView = new ModelAndView();
-        userService.addUser(messageUser);
-        modelAndView.setViewName("redirect:/admin");
-        return modelAndView;
+    public String addUserPost(User messageUser) {
+     userService.addUser(messageUser);
+        return "redirect:/admin";
     }
 
     @PostMapping(value = "/admin/delete")
-    public ModelAndView deleteUsersPost(Long id) {
-        ModelAndView modelAndView = new ModelAndView();
+    public String deleteUsersPost(Long id) {
+
         userService.deleteUser(id);
-        modelAndView.setViewName("redirect:/admin");
-        return modelAndView;
+
+        return "redirect:/admin";
     }
 
     @PostMapping(value = "/admin/update")
-    public ModelAndView updateUsersPost(User messageUser) {
-        ModelAndView modelAndView = new ModelAndView();
+    public String updateUsersPost(User messageUser) {
         userService.updateUser(messageUser);
-        modelAndView.setViewName("redirect:/admin");
-        return modelAndView;
+        return "redirect:/admin";
     }
 
     @GetMapping(value = "/admin")
@@ -62,25 +58,16 @@ public class UserController {
     @GetMapping(value = "/admin/add")
     public String addUser() {
         return "admin/addUser";
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("admin/addUser");
-//        return modelAndView;
     }
 
     @GetMapping(value = "/admin/delete")
     public String deleteUsers() {
         return "admin/deleteUser";
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("admin/deleteUser");
-//        return modelAndView;
     }
 
     @GetMapping(value = "/admin/update")
     public String updateUsers() {
         return "admin/updateUser";
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("admin/updateUser");
-//        return modelAndView;
     }
 
 }

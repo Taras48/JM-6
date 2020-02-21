@@ -17,7 +17,7 @@
     <a href="/admin/add">Add Users</a>
 </p>
 <form action="/admin/delete" method="post">
-    Id:<input type="number" name="id" value="${param.id}">><br/><br/>
+    Id:<input type="number" name="id" value="${param.id}"><br/><br/>
     <button>Delete user</button>
 </form>
 
