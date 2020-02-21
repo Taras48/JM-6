@@ -17,10 +17,15 @@
     <a href="/admin/delete">Delete Users</a>
 </p>
 <form action="/admin/update" method="post">
-    ID:<input type="number" name="id">
-    Name:<input type="text" name="name">
-    Password:<input type="password" name="password">
-    Message:<input type="text" name="message"><br/><br/>
+    <p>Id for update User: <input type="number" name="testId"  disabled value="${param.id}"/>
+        NewName: <input type="text" name="newName" value="${param.name}"/>
+        NewMail: <input type="text" name="newMail"value="${param.mail}" /></p>
+    <p>NewPassword: <input type="password" name="newPassword" value="${param.password}">
+        Role:<select type="text" name="role" >
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+        </select>
+    </p><br/><br/>
     <button>Update user</button>
 </form>
 
